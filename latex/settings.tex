@@ -12,13 +12,16 @@
 \usepackage[ansinew]{inputenc}
 \usepackage[T1]{fontenc}
 
+% Highlight text:
+\usepackage{color,soul}
+
 %todo notes
 \usepackage[textsize=scriptsize,draft]{todonotes}
 %use this line to disable them all
 %\usepackage[textsize=scriptsize,disable]{todonotes}
 
 % page layout
-\usepackage[paper=a4paper,left=20mm,right=20mm,top=20mm,bottom=15mm]{geometry}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry}
 %originally left= 50
 
 % page header layout
@@ -108,3 +111,11 @@
 \makeglossaries
 \include{Abbr} % all abbreviations
 \include{Symbols} % all symbols
+
+
+% acronyms
+\usepackage{acronym}
+
+% import pdfs
+
+%\usepackage{pdfpages}
