@@ -33,7 +33,12 @@ fitAjzen <- lm(EI ~ PA + SN + PBC, data=data)
 summary(fitAjzen)
 #plot(fitAjzen)
 
+#Plot effect of PA on EI
 plot(data$PA,data$EI,  main="EI vs. PA", 
      xlab="PA ", ylab="EI", pch=19)
+abline(lm(EI ~ PA, data = data), col="red")
 
-abline(lm(EI ~ PA, data = data), col="red") # regression line (y~x) 
+#Plot effect of SN on EI
+plot(data$SN,data$EI,  main="EI vs. SN", 
+     xlab="SN ", ylab="EI", pch=19)
+abline(lm(EI ~ SN, data = data), col="red")
