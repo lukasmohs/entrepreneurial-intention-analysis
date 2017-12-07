@@ -1,0 +1,66 @@
+%NO MODIFICATION OF THIS FILE REQUIRED
+%Contents of cover page specified in info.tex
+\newgeometry{left=20mm,right=20mm,top=20mm,bottom=10mm}
+\thispagestyle{empty}
+\fontfamily{phv}\selectfont
+\vspace{2cm}
+
+\begin{center}
+\ifthenelse{\equal{\placedoctype}{Projektstudium}}{Projektstudium\\[1.5mm]}{}
+\ifthenelse{\equal{\placedoctype}{Seminararbeit}}{Seminararbeit\\[1.5mm]}{}
+\ifthenelse{\equal{\placedoctype}{Abschlussarbeit}}{Seminar Paper}{}
+at Technical University Munich Entrepreneurship Research Institute
+\end{center}
+
+\vspace{1.5cm}
+
+\begin{center}
+\LARGE 
+\textbf{\placetitle}
+\normalsize
+\end{center}
+
+
+\vspace{1.5cm}
+
+\begin{tabular}{lp{0.5cm}l}
+Supervisor:&&\placelecturer\\
+&&\placeinstitute\\
+&&Technical University Munich\\
+&&\\
+&&\\
+Study Degree:&&\placecourseofstudies\\
+&&\\
+&&\\
+Authors:&&\\
+&&\placefirstauthor\\
+&&\placefirstaddress\\
+&&Mail: \placefirstmail\\
+&&Matriculation Number: \placefirstmatrikelnumber\\
+&&\\
+&&\\
+\ifthenelse{\numofauthors > 1}{
+&&\placesecondauthor\\
+&&\placesecondaddress\\
+&&Mail: \placesecondmail\\
+&&Matriculation Number: \placesecondmatrikelnumber\\
+&&\\
+&&\\}{}
+\ifthenelse{\numofauthors > 2}{
+&&\placethirdauthor\\
+&&\placethirdaddress\\
+&&Mail: \placethirdmail\\
+&&Matriculation Number: \placethirdmatrikelnumber\\
+&&\\
+&&\\}{}
+\ifthenelse{\numofauthors > 3}{
+&&\placefourthauthor\\
+&&\placefourthaddress\\
+&&Mail: \placethirdmail\\
+&&Matriculation Number: \placethirdmatrikelnumber\\
+&&\\
+&&\\}{}
+Submission Date:&&\placedate\\
+\end{tabular}
+\restoregeometry
+\fontfamily{ptm}\selectfont
