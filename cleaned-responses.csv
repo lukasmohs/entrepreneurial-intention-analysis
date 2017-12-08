@@ -1,4 +1,4 @@
-Timestamp;ID;11a;11b;11c;11d;11e;13a;13b;13c;15a;15b;15c;15d;15e;15f;18a;18b;18c;18d;18e;18f;Degree;Study Program;Total Semesters;My gender ;Country of Origin;Attended SEBA;Already Entrepreneur;I started this project in a university course;Comments I would like to share:;I attended a course where I developed a technical prototype? (If 'Yes' name it)
+Timestamp;ID;11a;11b;11c;11d;11e;13a;13b;13c;15a;15b;15c;15d;15e;15f;18a;18b;18c;18d;18e;18f;Degree;Study Program;Semesters;Gender;Country of Origin;Attended SEBA;Already Entrepreneur;I started this project in a university course;Comments I would like to share:;I attended a course where I developed a technical prototype? (If 'Yes' name it)
 11.18.2017 17:43:45;1;4;4;5;5;2;1;3;6;4;3;5;5;4;4;1;1;3;3;5;4;Master;Information Systems ;13;Female;Germany;yes;no;;;
 11.18.2017 17:45:55;2;1;2;2;3;1;1;7;5;3;1;2;4;4;4;1;1;1;1;1;1;Master;Information Systems;10;Female;Austria;yes;no;;Awesome survey!!;
 11.18.2017 17:49:57;3;5;1;2;3;4;7;6;1;2;1;2;2;1;1;2;2;1;1;2;1;Master;Information Systems ;13;Male;Germany;yes;no;;;
@@ -23,7 +23,7 @@ Timestamp;ID;11a;11b;11c;11d;11e;13a;13b;13c;15a;15b;15c;15d;15e;15f;18a;18b;18c
 11.22.2017 16:42:50;22;6;6;6;6;5;5;5;5;2;3;6;3;4;5;3;5;2;4;2;5;Master;Information Systems;12;Male;Germany;yes;no;;;
 11.23.2017 12:57:43;23;4;5;5;5;5;3;2;4;4;2;4;1;1;4;3;4;4;6;2;6;Master;Information Systems;11;Female;Germany;yes;no;;;
 11.24.2017 10:44:47;24;5;5;6;6;5;3;1;7;3;4;2;2;1;3;5;4;5;4;2;5;Master;Information Systems;13;Female;Egypt;yes;no;;;
-11.24.2017 13:30:42;25;4;3;6;5;3;2;7;5;4;4;4;4;3;5;2;3;3;5;4;5;Master;Information Systems;11;Male;Germany;no;no;;;Advanced Web Engineering (Uni Wôrzburg)
+11.24.2017 13:30:42;25;4;3;6;5;3;2;7;5;4;4;4;4;3;5;2;3;3;5;4;5;Master;Information Systems;11;Male;Germany;no;no;;;Advanced Web Engineering (Uni W™rzburg)
 11.27.2017 6:08:28;26;1;1;1;1;1;1;3;4;1;1;1;1;5;1;1;1;1;1;7;1;Master;Information Systems;10;Male;Germany;yes;no;;;
 11.28.2017 10:42:10;27;2;3;2;3;3;1;3;2;3;2;3;4;2;4;1;4;3;1;2;3;Bachelor;Information Systems;1;Male;Germany;no;no;;;No
 11.28.2017 10:45:40;28;5;6;7;7;5;7;3;3;4;4;7;5;4;5;6;5;7;7;7;7;Master;Data Engineering and Analytics;4;Male;India;no;yes;no;;No

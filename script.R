@@ -2,15 +2,16 @@ library(dplyr)
 library(car)
 
 # Modeling Random to test
-#data <- mutate(data, newSN = round(rnorm(66,4,2.75)))
-#data <- mutate(data, newSN =  ifelse(newSN <  1, 1,newSN))
-#data <- mutate(data, newSN =  ifelse(newSN >  7, 7,newSN))
+#data <- mutate(data, new = round(rnorm(66,4,2.75)))
+#data <- mutate(data, new =  ifelse(new <  1, 1,new))
+#data <- mutate(data, new =  ifelse(new >  7, 7,new))
 #plot(data$EI,data$newSN)
-#abline(lm(data$EI ~ data$newSN))
-#fit=lm(EI ~ newSN, data=data)
+#abline(lm(data$EI ~ data$new))
+#fit=lm(EI ~ new, data=data)
 #summary(fit)
 
-setwd("/Users/lukasmohs/Desktop/Innovation-Analysis/")
+########   SETTINGS    #############
+setwd("/Users/lukasmohs/Desktop/Innovation-Analysis/") #adjust to directiory
 data = read.csv("cleaned-responses.csv",sep=';')
 summary(data)
 data <- mutate(data, PA = (X11a+X11b+X11c+X11d+X11e)/5)
@@ -26,18 +27,42 @@ fitIEonEntrpreneur <- lm(Entrepreneur ~ EI, data=data)
 summary(fitIEonEntrpreneur)
 
 ########    EFFECT OF SEBA    #############
-#Modeling effect of SEBA on PA
-fitPA <- lm(PA ~ SEBA, data=data)
-summary(fitPA)
-#Modeling effect of SEBA on SN
-fitSN <- lm(SN ~ SEBA, data=data)
-summary(fitSN)
-#Modeling effect of SEBA on PBC
-fitPBC <- lm(PBC ~ SEBA, data=data)
-summary(fitPBC)
 #Modeling effect of SEBA on IE
 fitSEBAonEI <- lm(EI ~ SEBA, data=data)
 summary(fitSEBAonEI)
+plot(data$SEBA, data$EI, axes=FALSE, main="SEBA vs. EI", 
+     xlab="SEBA ", ylab="EI", pch=19)
+axis(side=1, at=c(0:1))
+axis(side=2, at=c(1:7))
+abline(fitSEBAonEI, col="red")
+
+#Modeling effect of SEBA on PA
+fitPA <- lm(PA ~ SEBA, data=data)
+summary(fitPA)
+plot(data$SEBA, data$PA, axes=FALSE, main="SEBA vs. PA", 
+     xlab="SEBA ", ylab="PA", pch=19)
+axis(side=1, at=c(0:1))
+axis(side=2, at=c(1:7))
+abline(fitPA, col="red")
+
+#Modeling effect of SEBA on SN
+fitSN <- lm(SN ~ SEBA, data=data)
+summary(fitSN)
+plot(data$SEBA, data$SN, axes=FALSE, main="SEBA vs. SN", 
+     xlab="SEBA ", ylab="SN", pch=19)
+axis(side=1, at=c(0:1))
+axis(side=2, at=c(1:7))
+abline(fitSN, col="red")
+
+#Modeling effect of SEBA on PBC
+fitPBC <- lm(PBC ~ SEBA, data=data)
+summary(fitPBC)
+plot(data$SEBA, data$PBC, axes=FALSE, main="SEBA vs. PBC", 
+     xlab="SEBA ", ylab="PBC", pch=19)
+axis(side=1, at=c(0:1))
+axis(side=2, at=c(1:7))
+abline(fitPBC, col="red")
+
 
 ########    EFFECT OF AJZEN ANTECEDENT    #############
 #Modeling effect of Ajzens antecedents on IE
