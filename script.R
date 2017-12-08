@@ -1,6 +1,15 @@
 library(dplyr)
 library(car)
 
+# Modeling Random to test
+#data <- mutate(data, newSN = round(rnorm(66,4,2.75)))
+#data <- mutate(data, newSN =  ifelse(newSN <  1, 1,newSN))
+#data <- mutate(data, newSN =  ifelse(newSN >  7, 7,newSN))
+#plot(data$EI,data$newSN)
+#abline(lm(data$EI ~ data$newSN))
+#fit=lm(EI ~ newSN, data=data)
+#summary(fit)
+
 setwd("/Users/lukasmohs/Desktop/Innovation-Analysis/")
 data = read.csv("cleaned-responses.csv",sep=';')
 summary(data)
@@ -11,10 +20,12 @@ data <- mutate(data, EI = (X18a + X18b + X18c + X18d + X18e + X18f)/6)
 data <- mutate(data, SEBA = ifelse(Attended.SEBA == 'yes', 1, 0))
 data <- mutate(data, Entrepreneur = ifelse(Already.Entrepreneur == 'yes', 1, 0))
 
+########    EFFECT OF EI on ACTION    #############
 #Modeling effect of IE on Entrepreneur
 fitIEonEntrpreneur <- lm(Entrepreneur ~ EI, data=data)
 summary(fitIEonEntrpreneur)
 
+########    EFFECT OF SEBA    #############
 #Modeling effect of SEBA on PA
 fitPA <- lm(PA ~ SEBA, data=data)
 summary(fitPA)
@@ -28,6 +39,7 @@ summary(fitPBC)
 fitSEBAonEI <- lm(EI ~ SEBA, data=data)
 summary(fitSEBAonEI)
 
+########    EFFECT OF AJZEN ANTECEDENT    #############
 #Modeling effect of Ajzens antecedents on IE
 fitAjzen <- lm(EI ~ PA + SN + PBC, data=data)
 summary(fitAjzen)
@@ -42,3 +54,8 @@ abline(lm(EI ~ PA, data = data), col="red")
 plot(data$SN,data$EI,  main="EI vs. SN", 
      xlab="SN ", ylab="EI", pch=19)
 abline(lm(EI ~ SN, data = data), col="red")
+
+#Plot effect of PBC on EI
+plot(data$PBC,data$EI,  main="EI vs. PBC", 
+     xlab="SN ", ylab="EI", pch=19)
+abline(lm(EI ~ PBC, data = data), col="red")
