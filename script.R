@@ -1,20 +1,12 @@
 library(dplyr)
 library(car)
 
-# Modeling Random to test
-#data <- mutate(data, new = round(rnorm(66,4,2.75)))
-#data <- mutate(data, new =  ifelse(new <  1, 1,new))
-#data <- mutate(data, new =  ifelse(new >  7, 7,new))
-#plot(data$EI,data$newSN)
-#abline(lm(data$EI ~ data$new))
-#fit=lm(EI ~ new, data=data)
-#summary(fit)
 
 ########   SETTINGS    #############
 setwd("/Users/lukasmohs/Desktop/Innovation-Analysis/") #adjust to directiory
 data = read.csv("cleaned-responses.csv",sep=';')
 summary(data)
-data <- mutate(data, PA = (X11a+X11b+X11c+X11d+X11e)/5)
+data <- mutate(data, ATB = (X11a+X11b+X11c+X11d+X11e)/5)
 data <- mutate(data, SN = (X13a+X13b+X13c)/3)
 data <- mutate(data, PBC = (X15a + X15b + X15c + X15d + X15e + X15f)/6)
 data <- mutate(data, EI = (X18a + X18b + X18c + X18d + X18e + X18f)/6)
@@ -36,14 +28,14 @@ axis(side=1, at=c(0:1))
 axis(side=2, at=c(1:7))
 abline(fitSEBAonEI, col="red")
 
-#Modeling effect of SEBA on PA
-fitPA <- lm(PA ~ SEBA, data=data)
-summary(fitPA)
-plot(data$SEBA, data$PA, axes=FALSE, main="SEBA vs. PA", 
-     xlab="SEBA ", ylab="PA", pch=19)
+#Modeling effect of SEBA on ATB
+fitATB <- lm(ATB ~ SEBA, data=data)
+summary(fitATB)
+plot(data$SEBA, data$ATB, axes=FALSE, main="SEBA vs. ATB", 
+     xlab="SEBA ", ylab="ATB", pch=19)
 axis(side=1, at=c(0:1))
 axis(side=2, at=c(1:7))
-abline(fitPA, col="red")
+abline(fitATB, col="red")
 
 #Modeling effect of SEBA on SN
 fitSN <- lm(SN ~ SEBA, data=data)
@@ -66,14 +58,14 @@ abline(fitPBC, col="red")
 
 ########    EFFECT OF AJZEN ANTECEDENT    #############
 #Modeling effect of Ajzens antecedents on IE
-fitAjzen <- lm(EI ~ PA + SN + PBC, data=data)
+fitAjzen <- lm(EI ~ ATB + SN + PBC, data=data)
 summary(fitAjzen)
 #plot(fitAjzen)
 
-#Plot effect of PA on EI
-plot(data$PA,data$EI,  main="EI vs. PA", 
-     xlab="PA ", ylab="EI", pch=19)
-abline(lm(EI ~ PA, data = data), col="red")
+#Plot effect of ATB on EI
+plot(data$ATB,data$EI,  main="EI vs. ATB", 
+     xlab="ATB ", ylab="EI", pch=19)
+abline(lm(EI ~ ATB, data = data), col="red")
 
 #Plot effect of SN on EI
 plot(data$SN,data$EI,  main="EI vs. SN", 
@@ -81,6 +73,15 @@ plot(data$SN,data$EI,  main="EI vs. SN",
 abline(lm(EI ~ SN, data = data), col="red")
 
 #Plot effect of PBC on EI
-plot(data$PBC,data$EI,  main="EI vs. PBC", 
-     xlab="SN ", ylab="EI", pch=19)
+plot(data$PBC,data$EI,  main="EI vs. PBC",
+     xlab="PBC ", ylab="EI", pch=19)
 abline(lm(EI ~ PBC, data = data), col="red")
+
+# Modeling Random to test
+#data <- mutate(data, new = round(rnorm(66,4,2.75)))
+#data <- mutate(data, new =  ifelse(new <  1, 1,new))
+#data <- mutate(data, new =  ifelse(new >  7, 7,new))
+#plot(data$EI,data$newSN)
+#abline(lm(data$EI ~ data$new))
+#fit=lm(EI ~ new, data=data)
+#summary(fit)
