@@ -4,41 +4,69 @@
 \input{commands} % include all individual commands here
 \input{info} % include all cover information here
 
-\setcounter{secnumdepth}{0}
+%\setcounter{secnumdepth}{0}
 
 \begin{document}
+\pagenumbering{Roman}
 
-\input{cover} 
+\input{cover2}
+\input{declaration_authorship}
 \renewcommand{\thepage}{\roman{page}}
 \setcounter{page}{1}
-\pagenumbering{arabic}
+
 
 \onehalfspacing
 \input{chapters/0_Abstract}
 \pdfbookmark[1]{Table of contents}{toc}
 \renewcommand\contentsname{Table of Contents}
+
+
 \tableofcontents
+
+\bigskip
+\bigskip
+
+\clearpage
+
+\vspace{5cm}
+\begin{LARGE}
+\textbf{Acronyms}
+\end{LARGE}
+\vspace{1cm}
+
+\input{acronyms}
+
+\clearpage
 %\listoffigures
 %\listoftables
 %\printglossary[type=\acronymtype,style=long ,title=Abbreviations, toctitle=Abbreviations]
 %s\printglossary[type=symbolslist,style=long ,title=Symbols]
+
+
+% redefine chapter to not have new pages
+\begingroup
+\doublespacing
+
+\renewcommand{\cleardoublepage}{}
+\renewcommand{\clearpage}{}
+
+\pagenumbering{arabic}
 \input{chapters/1_Introduction}
 
-\chapter{Theory and Hypothesis}
-\input{chapters/2_1_EntrepreneurialIntentions}
+\chapter{Theory and Hypotheses}
+\label{ch:theory}
+\input{chapters/2_1_Ajzens_TPB}
 \input{chapters/2_2_EntrepreneurialEducation}
-\input{chapters/2_3_Hypothesis}
 
 \input{chapters/3_Methodology}
 \input{chapters/4_Results}
 \input{chapters/5_Discussion}
 \input{chapters/6_Conclusion}
+\endgroup
 
 \bibliography{bibliography/literature}
 \bibliographystyle{apalike}
 
-\section{Acronyms}
-\input{acronyms}
 
 \input{chapters/Appendix}
 

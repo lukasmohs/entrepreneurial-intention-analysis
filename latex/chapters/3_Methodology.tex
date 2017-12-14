@@ -1,40 +1,39 @@
-\chapter{Methodology}\label{chapter:Methodology}
-\section{Research Design}
-Based on our extensive literature review, we pursue a quantitative research approach to test the hypotheses against empirical data. Two distinct regression designs are applied: A linear regression model is used to test the hypothesis concerning research question one. In this model, the three latent variables of Ajzen's TPB are exogenous variables predicting the EI. For research question two, we provide evidence by means of a mediation analysis based on \cite{baron1986moderator}.
-To gather the relevant data, we are using a structured questionnaire. The validated, multi-item questionnaire is assessed via a seven-point Likert scale and is administered once with students from technical study programs at the Technical University Munich. The survey assesses four latent variables: personal attitude, subjective norm, perceived behavioral control and the level of EI.  Furthermore, we assess whether students have participated in a university course for developing a technical prototype. We also include questions to assess five control variables: Degree program, study subject, total number of semesters, gender and country of birth.
+\chapter{Methodology}\label{chapter:methodology}
 
-\section{Data Collection}
+Based on our extensive literature review, we apply a quantitative research design to test the hypotheses against empirical data. For research question one, Ajzen's theory is tested in a novel setting to enhance its external validity. Contingent on the results of the first hypothesis, a mediation analysis is applied to test our second and third hypotheses. In the following, the sample and data collection process as well as the regression models are described.
 
-The gathered and cleaned information as well as the regression analysis and outcomes are publicly available at: 
-
-\begin{center}
-\textit{https://github.com/lukasmohs/entrepreneurial-intention-analysis}
-\end{center} 
-
-see print version of our survey in appendi
-
-\section{Variables}
 \section{Sample}
+The setting for our survey was the Informatics Faculty of \ac{tum}. The sample consisted of 66 participants, 33\% of which were female. 59\% of our sample participated in an \ac{ec} that meets the criteria outlined in section \ref{sec:defining-ee}. The remaining participants did not partake in the \acp{ec}, hence they are our control group. Most of the students studied Information Systems (55\%), the second most frequent major was Informatics (29\%). Further subjects included Data Engineering, Robotics, Games Engineering and IT Security. The average semester of our participants was 8.9, which is consistent with 88\% currently pursuing a master's degree. Our sample consists mainly of students with German nationality (73\%).
+
+For this study, we have chosen an \ac{ec} that complies with the criteria outlined in section \ref{sec:defining-ee}. Software Engineering in Business Applications (SEBA, original in German: "Software Engineering f\"ur betriebliche Anwendungen - Masterkurs") is about technical web development in an entrepreneurial context. Students are to come up with an idea that they have to develop to a working prototype. Throughout the entire course, they have to keep the founding of a start-up in mind by creating a Business Model Canvas, Value Proposition Canvas and to pitch their idea to a jury of teaching assistants \cite{Matthes2017seba}. According to our course classifications in section \ref{sec:defining-ee}, \ac{seba} falls into the category of stage one and two of the entrepreneurial process due to their practical orientation. We classify the content of the class as "entrepreneurial domains" and "entrepreneurial strategy". Due to the course's practical approach, the pedagogical method is classified as "active-applied".
+
+\section{Data Collection and Variable Operationalization}
+In November 2017, a structured questionnaire was distributed to collect the data. Administering an anonymous survey is a daunting task. First, mailing lists of lectures are inaccessible to students. Second, we anticipated a low response rate since our survey was not officially sent by any informatics chair. Due to these reasons we had to resort to an arbitrary selection of survey participants. Our personal network served as starting point to gather the initial data. Additionally, we spent half a day in the common space of the Informatics Faculty to randomly convince students to participate in our study. The survey was conducted in English.
+
+In the questionnaire, only statistically validated items are included to assess the constructs of Ajzen's \acl{tpb}. The questionnaire is administered once after the students have participated in the \ac{ec} (ex-post analysis) and to the control group. From a methodological standpoint it is preferential to use longitudinal data (i.e. two data points for each individual before and after participating in the course), because this enables causal inferences. \citet{lorz2013entrepreneurship} and \citet{von2010effects} further elaborated on weaknesses of studies using ex-post data and suggest to conduct quasi-experimental studies in entrepreneurship education research. This is further discussed in chapter \ref{chapter:discussion}. However, due to time-restrictions we confirm ourselves to a cross-sectional analysis, being well-aware of its restrictions with respect to causal inferences and external validity. 
+
+The survey assesses a total of five variables that are included in our regression model. For the operationalization of the latent variables \acf{atb}, \acf{sn}, \acf{pbc} and the level of \acf{ei}, we adopt the items suggested by \citet{linan2009development}. All four variables are assessed via a seven-point Likert scale, where a score of one refers to "absolutely disagree" and a score of seven refers to "absolutely agree". The mean of the respective items of one variable represents the component score of that variable and is used in the statistical analysis. The dependent variable \ac{ei} is assessed with six items and has a Cronbach's $\alpha$ of 0.93 \citep{cortina1993coefficient}. The independent variables include \ac{atb} (5 items, Cronbach's $\alpha$: 0.93), \ac{pbc} (6 items, Cronbach's $\alpha$: 0.88) and \ac{sn} (3 items, Cronbach's $\alpha$: 0.26). According to \citet{hair2010black}, an $\alpha$-level of $\geq$0.7 is acceptable, which means that the measures \ac{ei}, \ac{atb} and \ac{pbc} have a very high reliability. Based on our data, the $\alpha$-level for the variable \ac{sn} is not sufficient. With respect to multicollinearity, all independent variables exhibit a variance inflation factor between one and ten. Hence, our statistical analysis is not affected by collinearity between the predicting variables. Table \ref{var} summarizes the variable statistics. 
+
+\begin{table}[H]
+\centering
+\caption{Variable statistics}
+\label{var}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Variables & Mean & Std. Error & $\alpha$-level & VIF \\ 
+\midrule
+\ac{ei} & 4.00 & 1.68 & 0.93 \\
+\ac{atb} & 4.82  & 1.63 & 0.93 & 1.84  \\
+\ac{pbc} & 3.78  & 1.35 & 0.88 & 1.59 \\
+\ac{sn} & 4.48  & 1.41 &  0.26 & 1.28 \\ \bottomrule 
+\end{tabular}
+\end{table} 
+
+The final independent variable included in our model is whether students have participated in an \ac{ec} complying with the criteria outlined in section \ref{sec:defining-ee}. This variable is coded as a dichotomous variable (1: has participated, 0: has not participated). The multi-item questionnaire is randomized to eliminate answer biases \citep{warner1965randomized}. Additionally, we include questions to assess five control variables that were found to influence \ac{ei} \citep{lorz2011impact,oosterbeek2010impact,pittaway2007entrepreneurship,solesvik2013entrepreneurial}. These are: degree (Master / Bachelor), study program (e.g. Information Systems), total number of semesters, gender and country of birth.  
+
 \section{Regression Models}
+To test the hypotheses outlined in sections \ref{sec:tpb-literature} and \ref{sec:hyp-II-III}, two distinct regression designs are applied. We use a linear regression model to test H1a-c. A mediation analysis is conducted to test H2 and H3a-c.
 
-Refer to symbols or abbreviations with\\\verb+\gls{symbolname} \glstext{symbolname} \glsfirst{symbolname}+:\\
-\gls{symb:N} \glstext{symb:N} \glsfirst{symb:N}\\
-\gls{BA} \gls{DA} \gls{MA}
+In the linear regression model, the three latent variables of Ajzen's \ac{tpb} are exogenous variables predicting the \ac{ei}. Our null hypotheses for H1a-c are that neither of these variables predict \acp{ei} at a significant level.
 
-Refer to other sections with \verb+\ref{labelname}+:\\
-A reference to this subsection: \ref{labelname}
-
-Include figures with\\
-\verb+\begin{figure}+\\
-\verb+...+\\
-\verb+\caption{An example figure}\label{fig:example}\end{figure}+
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=10cm]{images/example_figure}
-\caption{An example figure}
-\label{fig:example}
-\end{center}
-\end{figure}
-
-Include only PostScript images (.eps) if you want to create a PostScript document using dvips and only .pdf, .png, .jpeg and .gif images if your goal is a PDF document using pdflatex.
+For the second research question, we formulated the second hypothesis as well as three process-hypothesis H3a-c in section \ref{sec:hyp-II-III}. Similar to the methodology applied by \citet{zhao2005mediating}, we provided evidence for these hypotheses by means of a mediation analysis based on \citet{baron1986moderator}. In a first step, we apply an ANOVA to identify whether the mean \ac{ei} of students participating in the \ac{ec} significantly differs from those students that have not participated in a similar course. The slope parameter of our dichotomous variable (course participation y/n) equals the difference in \acp{ei} across the experimental conditions (i.e. the "total effect"). In a second step, we decompose the total effect into a direct and an indirect effect. The indirect effect represents the part of the total effect explained by the mediator postulated in our hypothesis. The direct effect represents the part of the total effect explained by all competing mediators. Only if the Sobel Test indicates a significant indirect effect, a mediation is observed \citep{sobel1982asymptotic}. If the direct effect is not significant, the total effect is fully mediated by the proposed mediator. A significant direct effect indicates a partial mediation. 
